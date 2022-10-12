@@ -24,24 +24,24 @@ mouth = {
     6 : "P"
 }
 results = {
-    0 : '1, 0',
-    1 : '0, 2',
-    2 : '1, 0',
-    3 : '2, 1',
-    4 : '1, 0'
+    0 : '1',
+    1 : '2',
+    2 : '1',
+    3 : '3',
+    4 : '1'
 }
 
 isu = 368823
 alphabet = "\\<>{|:;8=-()OP"
-smile = f"{isu%5}{isu%4}{isu%7}" # 330
+smile = f"{isu%6}{isu%4}{isu%7}" # 330
 smile_mask = (eyes[3] + nose[3] + mouth[0])
 
 
 string_set = [
     f"Between a Rock and a Hard Place {smile_mask}",
-    f"Foaming {smile} At The Mouth {smile}",
+    f"Foaming {smile_mask} At The Mouth {smile_mask}",
     f"It's Not {smile_mask} Brain Surgery",
-    f"Curiosity Killed {smile_mask} The {smile} Cat {smile_mask}",
+    f"Curiosity Killed {smile_mask} The {smile_mask} Cat {smile_mask}",
     f"Man of {smile_mask} Few Words"
 ]
 rand_string_set = [
@@ -65,9 +65,7 @@ def fun_2(string_set):
         print(string_set[ss])
         if (len(re.findall(re.escape(smile_mask), string_set[ss]))):
             print("• Total " + str(smile_mask) + " in string set:", len(re.findall(re.escape(smile_mask), string_set[ss])))
-        if len(re.findall(re.escape(smile), string_set[ss])):
-            print("• Total " + str(smile) + " in string set:", len(re.findall(re.escape(smile), string_set[ss])))
-        print('• Your resuts to compare with: ' + results[ss])
+            print('• Compare with predetermined results: ' + results[ss])
         print()
 
 def fun_3(rand_string_set):
@@ -83,4 +81,4 @@ if __name__ == '__main__':
         print()
         print(fun_3(rand_string_set))
     except ValueError or SyntaxError:
-        print('You are doing something wrong :)')
+        print('You are doing something completely wrong :)')
