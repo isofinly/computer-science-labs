@@ -1,6 +1,5 @@
 import re
 
-# isu = 368823
 eyes = {
     0 : ":",
     1 : ";",
@@ -23,35 +22,33 @@ mouth = {
     5 : "/",
     6 : "P"
 }
+# string_set = [
+#    f'',
+#    f'',
+#    f'',
+#    f'',
+#    f''
+# ]
 
 isu = 368823
-smile = f"{isu%5}{isu%4}{isu%7}"
+alphabet = "\\<>{|:;8=-()OP"
+smile = f"{isu%5}{isu%4}{isu%7}" # 330
+smile_mask = (eyes[3] + nose[3] + mouth[0])
 
-smile_mask = "8<{("
 
 string_set = [
-    f"Between a Rock and a Hard Place {smile}",
+    f"Between a Rock and a Hard Place {smile_mask}",
     f"Foaming {smile} At The Mouth {smile}",
-    f"It's Not {smile} Brain Surgery",
-    f"Curiosity Killed {smile} The {smile} Cat {smile}"
-    f"Man of {smile} Few Words"
+    f"It's Not {smile_mask} Brain Surgery",
+    f"Curiosity Killed {smile_mask} The {smile} Cat {smile_mask}",
+    f"Man of {smile_mask} Few Words"
 ]
 
 
-# for i in string_set:
-#     print(len(re.findall(string_set[i], smile)))
-for i in range(len(string_set)):
-    print(string_set[i])
-    print(len(re.findall(smile, string_set[i])))
-    print(smile, type(smile_mask))
-# def function_2():
+def fun_2(string_set):
+   for ss in range(len(string_set)):
+      print(string_set[ss])
+      print("Total " + str(smile_mask) + " in string set:", len(re.findall(re.escape(smile_mask), string_set[ss])))
+      print("Total " + str(smile) + " in string set", len(re.findall(re.escape(smile), string_set[ss])))
 
-
-
-# def function_1(string: str) -> int:
-#     return (len(re.findall({smile}, string_set)))
-
-
-
-
-        
+print(fun_2(string_set))
