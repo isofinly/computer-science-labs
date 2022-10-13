@@ -41,12 +41,12 @@ def fun_1(studs):
     retain_dict = {}
 
     for ls in range(len(studs)):
-        if group != studs.get(list(studs.keys())[ls]):
-            retain_dict[list(studs.keys())[ls]] = studs.get(list(studs.keys())[ls])
-            # print('•', list(studs.keys())[ls], studs.get(list(studs.keys())[ls]))
         new_arr_string = str(list(studs.keys())[ls]).split(' ')
         sub_arr_string = str(new_arr_string[1])
-        
+
+        if group != studs.get(list(studs.keys())[ls]):
+            retain_dict[list(studs.keys())[ls]] = studs.get(list(studs.keys())[ls])
+
         if (sub_arr_string[0] != sub_arr_string[2]):
             retain_dict[list(studs.keys())[ls]] = studs.get(list(studs.keys())[ls])
 
