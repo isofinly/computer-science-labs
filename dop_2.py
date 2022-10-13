@@ -36,22 +36,27 @@ def match(string):
         return(0)
 
 def fun_1(studs):
-    expell_str = []
+
+    expell_arr = []
+    retain_dict = {}
+
     for ls in range(len(studs)):
         if group != studs.get(list(studs.keys())[ls]):
-            print('teste: ', list(studs.keys())[ls], studs.get(list(studs.keys())[ls]))
+            retain_dict[list(studs.keys())[ls]] = studs.get(list(studs.keys())[ls])
+            # print('•', list(studs.keys())[ls], studs.get(list(studs.keys())[ls]))
         new_arr_string = str(list(studs.keys())[ls]).split(' ')
         sub_arr_string = str(new_arr_string[1])
-        if (sub_arr_string[0] == sub_arr_string[2]) and (group == studs.get(list(studs.keys())[ls])):
-            expell_str.append(new_arr_string[0] + ' ' + new_arr_string[1])
-    print('To expell:', expell_str)
-        # print(list(studs.keys()))
-        # print('get: ')
-        # print (list(studs.keys())[ls])
         
-        # for ls_index in range(2):
-        #     new_string = str(list(studs.keys())[ls])
-        #     print(new_string.split(' '))
+        if (sub_arr_string[0] != sub_arr_string[2]):
+            retain_dict[list(studs.keys())[ls]] = studs.get(list(studs.keys())[ls])
+
+        if (sub_arr_string[0] == sub_arr_string[2]) and (group == studs.get(list(studs.keys())[ls])):
+            expell_arr.append(new_arr_string[0] + ' ' + new_arr_string[1])
+
+    print('To expell:', expell_arr)
+    print('To retain:', retain_dict)
+
+
 if __name__ == '__main__':
     try:
         print(fun_1(studs))
