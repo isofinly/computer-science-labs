@@ -81,4 +81,4 @@ if __name__ == '__main__':
         print()
         print(fun_3(rand_string_set))
     except ValueError or SyntaxError:
-        print('You are doing something completely wrong :)')
+        print('You are doing something wrong :)')
