@@ -14,8 +14,11 @@ studs = {
 'Петров П.П.' : 'P0000',
 'Анищенко А.А.' : 'P33113',
 'Примеров Е.В.' : 'P0000',
-'Иванов И.И.' : 'P0000'
+'Иванов И.И.' : 'P0000',
+'Абобов В.Г.' : 'P8888',
+'Бамбуб К.К.' : 'P0000'
 }
+
 
 # studs_string = 'Петров П.П. P0000 Анищенко А.А. P33113 Примеров Е.В. P0000 Иванов И.И. P0000'
 # new_s = studs_string.split(' ')
@@ -53,9 +56,15 @@ def fun_1(studs):
         if (sub_arr_string[0] == sub_arr_string[2]) and (group == studs.get(list(studs.keys())[ls])):
             expell_arr.append(new_arr_string[0] + ' ' + new_arr_string[1])
 
-    print('To expell:', expell_arr)
-    print('To retain:', retain_dict)
-
+    print('To expell:')
+    for i in range(len(expell_arr)):
+        print(expell_arr[i])
+        
+    print('To retain:')
+    
+    for i in range(len(retain_dict)):
+        print(list(retain_dict.keys())[i], retain_dict.get(list(retain_dict.keys())[i]))
+    
 
 if __name__ == '__main__':
     try:
