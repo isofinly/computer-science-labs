@@ -29,6 +29,6 @@ def fun_1(new_s):
 
 if __name__ == '__main__':
     try:
-        print(fun_1(new_s))
+        (fun_1(new_s))
     except ValueError or SyntaxError:
         print('You are doing something completely wrong :)')
