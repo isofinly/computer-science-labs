@@ -68,7 +68,7 @@ def fun_1(studs):
 
 if __name__ == '__main__':
     try:
-        print(fun_1(studs))
+        (fun_1(studs))
 
     except ValueError or SyntaxError:
         print('You are doing something completely wrong :)')
