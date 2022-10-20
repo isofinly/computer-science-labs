@@ -10,14 +10,15 @@ def match(string):
 
 	pattern_1 = '[ЙЦУКЕНГШЩЗФЫВАПРБОЛДЯЧСМИТЬ]+[йцукенгшщзфывапрболдячсмитью]+$'
 	pattern_2 = '[ЙЦУКЕНГШЩЗФЫВАПРБОЛДЯЧСМИТЬЮ]'
-
+	pattern_5 = r'[ЙЦУКЕНГШЩЗФЫВАПРБОЛДЯЧСМИТЬЮЁ]\.[ЙЦУКЕНГШЩЗФЫВАПРБОЛДЯЧСМИТЬЮЁ]\.'
+	print('aboba', (re.search(pattern_5, string)))
 	if re.search(pattern_1, string):
 		return('pattern_1_flag')
-	elif (re.search(pattern_2, string)) and (len(string) == 4):
+	elif (re.search(pattern_2, string)) and ((re.search(pattern_5, string))):
 		return('pattern_2_flag')
 	else:
 		return(0)
-
+	
 def fun_1(new_s):
 	str_dict = {}
 	for i in range(len(new_s)-1):
