@@ -1,0 +1,25 @@
+ # maxIndex = 0
+        # for index in enumerate(f1):
+        #     newstr = (str(index[1]))
+        #     if maxIndex < index[0]:
+        #         maxIndex = index[0]
+        # print(maxIndex)
+            # print((index[0]))
+        for index in enumerate(f1):
+            line = (str(index[1]))
+
+            # print(line)
+
+            # print('----------------')
+
+            line1 = line[line.index(str(line[line.find('"'):line.find('"', line.find('"') + 1) + 1])):] # line stripped by " and "
+            line2 = line[line.find('"'):line.find('"', line.find('"') + 1) + 1]
+            
+            line3 = line1[len(line2):-1]
+            line4 = line3[line3.find('"'):]
+            
+            # print(line4)
+            # print(line2) 
+            
+            # print('----------------')
+            print(line4.count('\n') == line2.count('\n') == 0)

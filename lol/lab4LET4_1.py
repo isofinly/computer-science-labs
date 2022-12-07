@@ -25,7 +25,10 @@ if checkBalance(str1) == False:
     
 else:
     print("Your JSON file has balanced parentheses")
-    with open('input.json', encoding='utf-8-sig') as f_input:
-        df = pd.read_json(f_input)
+    try:
+        with open('input.json', encoding='utf-8-sig') as f_input:
+            df = pd.read_json(f_input)
 
-    df.to_csv('output4.csv', encoding='utf-16', sep='\t', index=False)
+        df.to_csv('output4.csv', encoding='utf-16', sep='\t', index=False)
+    except ValueError:
+        print("Your JSON file is not valid")

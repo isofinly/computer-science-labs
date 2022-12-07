@@ -28,6 +28,9 @@ if checkBalance(str1) == False:
 else:
     print("Your JSON file has balanced parentheses")
     with open('input.json', 'r', encoding="utf8") as f:
-        data = json.load(f)
-        with open('output2.yml', 'w', encoding="utf8") as f:
-            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+        try:
+            data = json.load(f)
+            with open('output2.yml', 'w', encoding="utf8") as f:
+                yaml.dump(data, f, allow_unicode=True)
+        except json.decoder.JSONDecodeError:
+            print("Your JSON file is not valid")

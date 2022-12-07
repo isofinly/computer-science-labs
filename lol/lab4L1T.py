@@ -38,7 +38,7 @@ else:
                     break
             if s[i] != '"' and s[i] != '{' and s[i] != '}' and '},' not in s :
                 buffer = buffer + s[i]
-                buffer = buffer.replace('[', '').replace(']', '')
+                # buffer = buffer.replace('[', '').replace(']', '')
     # newA = ' '.join(arr).replace(' ', '').replace('\n','*').split('*')
     # newA = (str(newA[0])[10:-2]).replace(',', '')
     # print(list(newA))
