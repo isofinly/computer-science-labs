@@ -27,7 +27,7 @@ def d():
     if s2 == "y":             
         try:
             df = pd.read_json(newF1test)
-            df.to_csv('/Users/isofinly/VSC-Projects/CS-lab-4/kek/out/output4.tsv', encoding='utf-16', sep='\t', index=False)
+            df.to_csv('.kek/out/output4.tsv', encoding='utf-16', sep='\t', index=False)
         except (ValueError, SyntaxError, pd.errors.ParserError):
             print("Your JSON file completely is not valid")
     else:
