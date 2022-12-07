@@ -38,7 +38,7 @@ except (json.decoder.JSONDecodeError, ValueError, SyntaxError):
     print("Your JSON file is not valid")
     s1 = input('do you want to ignore this error? (y/n): ')
     if s1 == 'y':
-        print("Your JSON file is not valid but it does not matter because you have chosen to ignore it")
+        print("Your YAML file is not valid but it does not matter because you have chosen to ignore it")
         newf1 = f1test.replace('"', '').replace('{', '').replace('}', '').replace('},','}').replace('],',']').replace(',\n','\n')
         f2.write(newf1)
         f2.close()
